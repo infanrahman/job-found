@@ -1,0 +1,41 @@
+{% extends 'admin/PageHeader.html' %}
+{% block content %}
+<head>
+    <style>
+        #cs {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+            color: white;
+        } 
+            #cs th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+            }
+    </style>
+</head>
+<div class="content">
+    
+    <div class="container">
+      
+  
+      <div class="table-responsive custom-table-responsive">
+  
+        <table class="table custom-table" style="width: 100%; border-collapse: separate;  
+        border-spacing: 0 50px;  ">
+          <thead>
+            <tr>  
+  <th style="color: white; text-align: center;">Name</th>
+    {% for cat in cat %}
+<tr>
+
+  <td style="color: white;"><div align="center">{{ cat.name }}</div></td>
+  <td width="80" style="color: white;"><a href="/edit_category/{{ cat.id }}">Edit</a></td>
+  <td width="80"style="color: white;"><a href="/delete_category/{{ cat.id }}">Delete</a></td>
+    {% endfor %}
+</table></html>
+{% endblock %}
+
+
